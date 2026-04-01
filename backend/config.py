@@ -6,9 +6,7 @@ load_dotenv()
 
 class Config:
 
-    SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URL",
-        "postgresql://admin:admin@localhost:5432/everyone_love_anime_db"
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", "postgresql://admin:admin@localhost:5435/everyone_love_anime_db"
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
