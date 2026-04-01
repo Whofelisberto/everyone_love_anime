@@ -16,7 +16,13 @@ app.config.from_object(Config)
 CORS(
     app,
     supports_credentials=True,
-    origins=["http://localhost:5173"],
+  origins=[
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+    "http://187.77.253.129:5175",
+  ],
     allow_headers=["Content-Type", "Authorization"],
     max_age=3600
 )
@@ -24,6 +30,9 @@ CORS(
 jwt = JWTManager(app)
 db.init_app(app)
 configure_cloudinary()
+
+with app.app_context():
+    db.create_all()
 
 @app.route("/", methods=["GET"])
 def home():
@@ -37,6 +46,4 @@ app.register_blueprint(like_routes)
 
 
 if __name__ == "__main__":
-  with app.app_context():
-    db.create_all()
-  app.run(host="127.0.0.1", port=5000, debug=True)
+  app.run(host="0.0.0.0", port=5001, debug=True)
