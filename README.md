@@ -143,10 +143,6 @@ npm install
 npm run dev
 ```
 
-Aplicação disponível em:
-
-- `http://127.0.0.1:5174`
-
 ## 🐳 Como rodar com Docker
 
 Para subir toda a stack:
