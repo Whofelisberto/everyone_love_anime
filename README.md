@@ -2,6 +2,8 @@
 
 Plataforma social para compartilhar posts, comentários e interagir com outros fãs de anime/mangá.
 
+<img border="0" data-original-height="1080" data-original-width="1920" height="600" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiQ6MJo-jwEUUb6SynoMifISX6JVSHPn2EFuai3eWqif19CnffLAzoAQDtzakd60I-P1VfyVoaicGYcqQw6DYDkgvyjTWotpx0f7Epodmmu4-1F3xFwAA4_lU1TaP0fBvbJJOnVI2kuGZ_rmY4A5BNp3he2pwPdIaunB3jOvtJd5FKvqEnyEEqYv03pn1O/s1851/1.jpg" width="1280" />
+
 ## 🛠️ Tecnologias
 
 ### Backend
