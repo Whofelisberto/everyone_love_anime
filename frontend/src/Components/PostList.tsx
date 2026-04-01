@@ -25,16 +25,18 @@ export default function PostList() {
   const searchQuery = searchParams.get('search') || '';
 
   const fetchPosts = async () => {
-    try {
-      setLoadingPosts(true);
-      const response = await api.get('/posts');
-      setPosts(response.data);
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Erro ao carregar posts.');
-    } finally {
-      setLoadingPosts(false);
-    }
-  };
+  try {
+    setLoadingPosts(true);
+    const response = await api.get(`/posts?${Date.now()}`)
+    const data = response.data;
+    setPosts(Array.isArray(data) ? data : []);
+
+  } catch (err: any) {
+    setError(err.response?.data?.message || 'Erro ao carregar posts.');
+  } finally {
+    setLoadingPosts(false);
+  }
+};
 
   useEffect(() => {
     fetchPosts();
