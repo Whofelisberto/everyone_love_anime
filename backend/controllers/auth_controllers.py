@@ -1,6 +1,5 @@
 from flask import jsonify, request
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, get_csrf_token
-import jwt
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 from werkzeug.security import check_password_hash, generate_password_hash
 from database import db
 from models.user import User
@@ -105,7 +104,7 @@ def logout():
     return response, 200
 
 
-@jwt_required()
+
 def me():
 	try:
 		current_user_id = int(get_jwt_identity())
@@ -126,7 +125,7 @@ def me():
 		return jsonify({"message": f"Erro ao buscar usuário atual: {str(e)}"}), 500
 
 
-@jwt_required()
+
 def update_profile():
 	try:
 		current_user_id = int(get_jwt_identity())
